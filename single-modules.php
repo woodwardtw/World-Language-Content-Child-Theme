@@ -6,34 +6,53 @@
  */
 
 get_header(); ?>
-
-	<div id="content" class="clearfix row">
+</div>
+	
+	<div id="module-content" class="clearfix row">
+	<div class="container-fluid">
+                <div class="row">
 			
-				<div id="main" class="col-sm-8 clearfix" role="main">
+				<div id="main" class="col-sm-12 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 						<header>
-						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
+													
+							<div class="page-header module-header" style="background-image:url(<?php the_field('intro_img'); ?>)"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
 							
-							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time></p>
+							<!--<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time></p>-->
 						
 						</header> <!-- end article header -->
 					
-						<section class="post_content clearfix" itemprop="articleBody">
-							<img src="<?php the_field('intro_img'); ?>">
+						<section class="post_content clearfix module-content" itemprop="articleBody">
+							<button data-toggle="collapse" data-target="#outcomes">Outcomes</button>
+							<div id="outcomes" class="collapse outcomes">
+								<?php the_field('outcome'); ?>
+							</div>
 							
-							<?php the_field('outcome'); ?>
-							<?php the_field('prt1'); ?>
-							<?php the_field('prt2'); ?>
-							<?php the_field('prt3'); ?>
-							<?php the_field('prt4'); ?>
-							<?php the_field('prt5'); ?>
+							<div class="prt1">
+								<h2>Début</h2>
+								<?php the_field('prt1'); ?>
+							</div>	
+							<div class="prt2">	
+								<h2>Échafaudage auditif</h2>						
+								<?php the_field('prt2'); ?>
+							</div>
+							<div class="prt3">	
+								<h2>Échafaudage grammatical</h2>							
+								<?php the_field('prt3'); ?>
+							</div>
+							<div class="prt4">		
+								<h2>Activity</h2>						
+								<?php the_field('prt4'); ?>
+							</div>
+							<div class="prt5">	
+								<h2>DERNIÈRE T CHE</h2>							
+								<?php the_field('prt5'); ?>
+							</div>
 
 							<?php wp_link_pages(); ?>
 					
@@ -75,7 +94,7 @@ get_header(); ?>
 			
 				</div> <!-- end #main -->
     
-				<?php get_sidebar(); // sidebar 1 ?>
+			<!--	<?php get_sidebar(); // sidebar 1 ?> -->
     
 			</div> <!-- end #content -->
 
