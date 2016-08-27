@@ -33,23 +33,23 @@ get_header(); ?>
 								<?php the_field('outcome'); ?>
 							</div>
 							
-							<div class="prt1">
-								<h2>Début</h2>
+							<div class="prt1 prt">
+								<h2>Début</h2>								
 								<?php the_field('prt1'); ?>
 							</div>	
-							<div class="prt2">	
+							<div class="prt2 prt">	
 								<h2>Échafaudage auditif</h2>						
 								<?php the_field('prt2'); ?>
 							</div>
-							<div class="prt3">	
+							<div class="prt3 prt">	
 								<h2>Échafaudage grammatical</h2>							
 								<?php the_field('prt3'); ?>
 							</div>
-							<div class="prt4">		
+							<div class="prt4 prt">		
 								<h2>Activity</h2>						
 								<?php the_field('prt4'); ?>
 							</div>
-							<div class="prt5">	
+							<div class="prt5 prt">	
 								<h2>DERNIÈRE T CHE</h2>							
 								<?php the_field('prt5'); ?>
 							</div>
