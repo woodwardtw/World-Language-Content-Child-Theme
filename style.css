@@ -35,12 +35,12 @@ video {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 500px;
 }
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
     font-size: 1.5em;
-    color: crimson;
+    color: #292929;
 }
 
 .page-header {
@@ -48,12 +48,6 @@ video {
     margin-bottom: 20px;
 }
 
-.prt {
-    border: 1px solid #efefef;
-    border-radius: 12px;
-    margin-top: 20px;
-    padding: 20px;
-}
 
 .outcomes {
     border: 1px solid #424242;
@@ -63,7 +57,7 @@ video {
 }
 
 .module-content {
-    max-width: 970px;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -74,8 +68,19 @@ video {
     background-position: 100% 0;
 }
 
+.field-content {
+  max-width: 975px;
+  margin: auto;
+  display: block;
+  border: 1px solid #efefef;
+  border-radius: 12px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
 .module-header h1 {
-        background-color: crimson;
+        background-color: #fbb731;
         display: inline-block;
         width: 100%;
         margin-top: 3em;
@@ -86,14 +91,56 @@ video {
 
 .module-content h2 {
     margin-top: 20px;
-    padding: 12px;
+    padding: 22px;
+    padding-left: 5em; 
+    font-size:3em;
     color: #fff;
-    background-color: crimson;
+    /*background: radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;*/
+    background-color: slategray;
+    background-size:75px 100px;
+    height: 100px; 
+    background-attachment: fixed;    
+
+}
+
+.lessons-list ul, .lessons-list ol{
+  list-style: none;
+  padding: 0px;
+}
+
+.lessons-list li {
+  list-style: none;
+
+}
+
+.lessons-list .page_item {
+  font-size: 3em;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  display: inline-flex;
+  background-color: #fbb731;
+}
+
+.lessons-list .page_item a {
+  color: #fff;
+}
+
+#iframe-code {
+  width: 300px;
+  height: 100px;
+  margin: .5em;
+  display: block;
 }
 
 iframe {
     width: 100% !important;
-    height: auto;
+    min-height: 500px;
+}
+
+.prt:nth-of-type(odd) {
+    background: #e0e0e0;
 }
 
 @media only screen and (min-width: 980px) {

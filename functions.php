@@ -12,6 +12,14 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 add_filter('widget_text', 'do_shortcode');
 
+function world_lang_theme_js() {
+    wp_enqueue_script( 'world_lang_theme_js', get_stylesheet_directory_uri() . '/js/world-lang.js', array( 'jquery' ), '1.0', true );
+}
+
+add_action('wp_enqueue_scripts', 'world_lang_theme_js');
+
+
+
 //function to call first uploaded image in functions file
 function main_image() {
 $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
@@ -82,3 +90,11 @@ function custom_post_type_Module() {
 
 }   
 add_action( 'init', 'custom_post_type_Module', 0 );
+
+//Kultura Oembed attempt
+
+
+ add_action( 'init', 'kaltura_add_oembed_handlers');
+function kaltura_add_oembed_handlers(){
+    wp_oembed_add_provider( 'https://vcu.mediaspace.kaltura.com//id/*', 'http://vcu.mediaspace.kaltura.com/oembed/', false );
+}
